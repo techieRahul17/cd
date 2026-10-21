@@ -1,0 +1,25 @@
+a = 10
+b = 20
+t1 = a < b
+if t1 == 0 goto L1
+t2 = b * 2
+t3 = a + t2
+c = t3
+goto L2
+L1:
+t4 = a - b
+c = t4
+L2:
+L3:
+t5 = a < b
+if t5 == 0 goto L4
+t6 = a + 1
+a = t6
+goto L3
+L4:
+t7 = a < b
+t8 = b > c
+t9 = a != c
+t10 = t8 and t9
+t11 = t7 or t10
+x = t11

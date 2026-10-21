@@ -1,0 +1,23 @@
+int a,b,c,x;
+int i;
+a = 10;
+b = 20;
+x = a - b - c;
+x = a + b * c - 4;
+if (a > b) {
+    c = a + 1;
+    r = a > b;
+} else {
+    c = b + 1;
+}
+while (m < n * 4)
+{
+    r = 16 * 5;
+    s = x * y + z;
+    t = m + s;
+}
+for (i = 0; i < 10; i++) {
+    a = a + 1;
+    b = x * y * z;
+}
+x = a < b or b > c and a != c;

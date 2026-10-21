@@ -1,0 +1,76 @@
+a = 10
+b = 20
+if a > b goto L1
+t1 = 0
+goto L2
+L1:
+t1 = 1
+L2:
+if t1 == 0 goto L3
+t2 = a + 1
+c = t2
+if a > b goto L5
+t3 = 0
+goto L6
+L5:
+t3 = 1
+L6:
+r = t3
+goto L4
+L3:
+t4 = b + 1
+c = t4
+L4:
+L7:
+t5 = n << 2
+if m < t5 goto L9
+t6 = 0
+goto L10
+L9:
+t6 = 1
+L10:
+if t6 == 0 goto L8
+t7 = 80
+r = t7
+t8 = x * y
+t9 = t8 + z
+s = t9
+t10 = m + s
+t = t10
+goto L7
+L8:
+i = 0
+L11:
+if i < 10 goto L12
+goto L13
+L12:
+t11 = a + 1
+a = t11
+t12 = x * y
+t13 = t12 * z
+b = t13
+t14 = i + 1
+i = t14
+goto L11
+L13:
+if a < b goto L14
+t15 = 0
+goto L15
+L14:
+t15 = 1
+L15:
+if b > c goto L16
+t16 = 0
+goto L17
+L16:
+t16 = 1
+L17:
+if a != c goto L18
+t17 = 0
+goto L19
+L18:
+t17 = 1
+L19:
+t18 = t16 and t17
+t19 = t15 or t18
+x = t19

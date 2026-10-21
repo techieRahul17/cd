@@ -1,0 +1,78 @@
+MOV a , 10
+MOV b , 20
+CMP a , b
+JGT L1
+MOV t1 , 0
+JMP L2
+L1
+MOV t1 , 1
+L2
+CMP t1 , 0
+JE L3
+MOV R0 , a
+ADD R0 , 1
+MOV t2 , R0
+MOV c , t2
+JMP L4
+L3
+MOV R0 , b
+ADD R0 , 1
+MOV t3 , R0
+MOV c , t3
+L4
+L5
+MOV R0 , n
+SHL R0 , 2
+MOV t4 , R0
+CMP m , t4
+JLT L7
+MOV t5 , 0
+JMP L8
+L7
+MOV t5 , 1
+L8
+CMP t5 , 0
+JE L6
+MOV t6 , 80
+MOV r , t6
+MOV R0 , x
+MUL R0 , y
+MOV t7 , R0
+MOV R0 , t7
+ADD R0 , z
+MOV t8 , R0
+MOV s , t8
+MOV R0 , m
+ADD R0 , s
+MOV t9 , R0
+MOV t , t9
+JMP L5
+L6
+CMP a , b
+JLT L9
+MOV t10 , 0
+JMP L10
+L9
+MOV t10 , 1
+L10
+CMP b , c
+JGT L11
+MOV t11 , 0
+JMP L12
+L11
+MOV t11 , 1
+L12
+CMP a , c
+JNE L13
+MOV t12 , 0
+JMP L14
+L13
+MOV t12 , 1
+L14
+MOV R0 , t11
+AND R0 , t12
+MOV t13 , R0
+MOV R0 , t10
+OR R0 , t13
+MOV t14 , R0
+MOV x , t14
