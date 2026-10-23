@@ -4,17 +4,17 @@ a = 10;
 b = 20;
 x = a - b - c;
 x = a + b * c - 4;
-if (a > b) {
-    c = a + 1;
-    r = a > b;
-} else {
-    c = b + 1;
-}
 while (m < n * 4)
 {
     r = 16 * 5;
     s = x * y + z;
     t = m + s;
+    if (a > b) {
+        c = a + 1;
+        r = a > b;
+    } else {
+        c = b + 1;
+    }
 }
 for (i = 0; i < 10; i++) {
     a = a + 1;

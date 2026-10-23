@@ -7,45 +7,45 @@ t3 = b * c
 t4 = a + t3
 t5 = t4 - 4
 x = t5
-if a > b goto L1
-t6 = 0
-goto L2
 L1:
-t6 = 1
-L2:
-if t6 == 0 goto L3
-t7 = a + 1
-c = t7
-if a > b goto L5
-t8 = 0
-goto L6
-L5:
-t8 = 1
-L6:
-r = t8
+t6 = n * 4
+if m < t6 goto L3
+t7 = 0
 goto L4
 L3:
-t9 = b + 1
-c = t9
+t7 = 1
 L4:
-L7:
-t10 = n * 4
-if m < t10 goto L9
-t11 = 0
+if t7 == 0 goto L2
+t8 = 16 * 5
+r = t8
+t9 = x * y
+t10 = t9 + z
+s = t10
+t11 = m + s
+t = t11
+if a > b goto L5
+t12 = 0
+goto L6
+L5:
+t12 = 1
+L6:
+if t12 == 0 goto L7
+t13 = a + 1
+c = t13
+if a > b goto L9
+t14 = 0
 goto L10
 L9:
-t11 = 1
+t14 = 1
 L10:
-if t11 == 0 goto L8
-t12 = 16 * 5
-r = t12
-t13 = x * y
-t14 = t13 + z
-s = t14
-t15 = m + s
-t = t15
-goto L7
+r = t14
+goto L8
+L7:
+t15 = b + 1
+c = t15
 L8:
+goto L1
+L2:
 i = 0
 L11:
 if i < 10 goto L12

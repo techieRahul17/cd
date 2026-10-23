@@ -1,0 +1,25 @@
+int a,b,c,x;
+int i;
+a = 15;
+b = 5;
+c = 3;
+x = a + b - c;
+y = a + b * c - 6;
+while (i < n * 2) 
+{
+    r = 12 * 4;
+    s = a * b + c;
+    t = i + s;
+    if (a < b) {
+        c = a + 2;
+        r = a >= b;
+    } else {
+        c = b * 3;
+    }
+}
+for (i = 0; i < 5; i++) {
+    a = a + 2;
+    b = x * y * c;
+}
+
+x = a > b or b < c and a != c;

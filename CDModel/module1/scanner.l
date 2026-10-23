@@ -1,4 +1,3 @@
-
 %option yylineno noyywrap
 %x COMMENT STRING
 %{

@@ -1,10 +1,9 @@
-
+%option noyywrap
 %{
 #include "parser.tab.h"
 #include <stdlib.h>
 #include <string.h>
 %}
-%option noyywrap
 %%
 "int"       { return INT; }
 "if"        { return IF; }
@@ -17,5 +16,6 @@
 [A-Za-z_][A-Za-z0-9_]* { yylval.str=strdup(yytext); return ID; }
 [0-9]+      { yylval.str=strdup(yytext); return NUMBER; }
 [ \t\r\n]+  ;
+[=,;(){}+\-*/] {return yytext[0];}
 .           { return yytext[0]; }
 %%
