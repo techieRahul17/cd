@@ -28,7 +28,7 @@ int newlabel(){
 
 %token INT AND OR IF ELSE WHILE FOR
 %token<str> ID NUMBER RELOP
-%type<str> bool_expr bool_and relation expr term factor
+%type<str> bool_expr bool_and relation expr term div factor
 
 %left OR
 %left AND
@@ -158,15 +158,25 @@ term {
     $$=$1;
 }
 ;
-term : term '*' factor {
+term : term '*' div {
     char *t=newtemp();
     printf("%s = %s * %s\n",t,$1,$3);
     $$=t;
 }
 |
-term '/' factor {
+term '/' div {
     char *t=newtemp();
     printf("%s = %s / %s\n",t,$1,$3);
+    $$=t;
+}
+|
+div {
+    $$=$1;
+}
+;
+div : div '^' factor {
+    char *t=newtemp();
+    printf("%s = %s ^ %s\n",t,$1,$3);
     $$=t;
 }
 |
@@ -174,6 +184,7 @@ factor {
     $$=$1;
 }
 ;
+
 factor : ID {
     $$=$1;
 }

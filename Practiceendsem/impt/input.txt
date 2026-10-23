@@ -5,6 +5,7 @@ b = 5;
 c = 3;
 x = a + b - c;
 y = a + b * c - 6;
+a = a ^ b;
 while (i < n * 2) 
 {
     r = 12 * 4;

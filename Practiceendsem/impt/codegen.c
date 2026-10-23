@@ -38,6 +38,7 @@ int main(){
             else if(!strcmp(op,"and")) printf("AND R0 , %s\n",right);
             else if(!strcmp(op,"or")) printf("OR R0 , %s\n",right);
             else if(!strcmp(op,"<<")) printf("SHL R0 , %s\n",right);
+            else if(!strcmp(op,"^")) printf("XOR R0 , %s\n",right);
             else {
                 printf("Invalid operator\n");
                 continue;
