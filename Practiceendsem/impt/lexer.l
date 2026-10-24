@@ -9,6 +9,7 @@
 %%
 
 "int" {return INT;}
+"float" {return FLOAT;}
 "while" {return WHILE;}
 "for" {return FOR;}
 "if" {return IF;}
@@ -18,7 +19,7 @@
 
 "<="|">="|"=="|"!="|"<"|">" {yylval.str=strdup(yytext); return RELOP;}
 [a-zA-Z_][a-zA-Z0-9_]* {yylval.str=strdup(yytext); return ID;}
-[0-9]+ {yylval.str=strdup(yytext); return NUMBER;}
+[0-9]+(\.[0-9]+)? {yylval.str=strdup(yytext); return NUMBER;}
 [;,=(){}+\-*/^] {return yytext[0];}
 [ \t\r\n]+ ;
 . {return yytext[0];}

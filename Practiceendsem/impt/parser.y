@@ -26,7 +26,7 @@ int newlabel(){
     char *str;
 }
 
-%token INT AND OR IF ELSE WHILE FOR
+%token INT FLOAT AND OR IF ELSE WHILE FOR
 %token<str> ID NUMBER RELOP
 %type<str> bool_expr bool_and relation expr term div factor
 

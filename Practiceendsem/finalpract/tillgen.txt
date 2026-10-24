@@ -1,0 +1,131 @@
+MOV R0 , a
+ADD R0 , a
+MOV t9 , R0
+MOV a , 12
+MOV b , 5
+MOV c , 2
+MOV p , 2.5
+MOV q , 4.5
+MOV R0 , b
+MUL R0 , c
+MOV t1 , R0
+MOV R0 , a
+ADD R0 , t1
+MOV t2 , R0
+MOV R0 , t2
+SUB R0 , 6
+MOV t3 , R0
+MOV x , t3
+MOV t4 , 66
+MOV p , t4
+MOV R0 , p
+ADD R0 , 0.0
+MOV t5 , R0
+MOV q , t5
+MOV t6 , 2.5
+MOV r , t6
+L1:
+MOV R0 , b
+SHL R0 , 2
+MOV t7 , R0
+CMP a , t7
+JLT L3
+MOV t8 , 0
+JMP L4
+L3:
+MOV t8 , 1
+L4:
+CMP t8 , 0
+JE L2
+MOV x , t9
+MOV R0 , p
+ADD R0 , q
+MOV t10 , R0
+MOV p , t10
+CMP x , b
+JGE L5
+MOV t11 , 0
+JMP L6
+L5:
+MOV t11 , 1
+L6:
+CMP t11 , 0
+JE L7
+MOV R0 , a
+ADD R0 , 1
+MOV t12 , R0
+MOV c , t12
+MOV R0 , p
+MUL R0 , 2.5
+MOV t13 , R0
+MOV q , t13
+JMP L8
+L7:
+MOV R0 , b
+MUL R0 , 3
+MOV t14 , R0
+MOV c , t14
+MOV t15 , 15
+MOV r , t15
+L8:
+MOV R0 , a
+ADD R0 , 1
+MOV t16 , R0
+MOV a , t16
+JMP L1
+L2:
+MOV i , 0
+L9:
+CMP i , 5
+JLT L10
+JMP L11
+L10:
+MOV R0 , b
+ADD R0 , 2
+MOV t17 , R0
+MOV b , t17
+MOV R0 , a
+MUL R0 , b
+MOV t18 , R0
+MOV R0 , t18
+MUL R0 , c
+MOV t19 , R0
+MOV x , t19
+MOV R0 , p
+ADD R0 , 1.5
+MOV t20 , R0
+MOV p , t20
+MOV R0 , i
+ADD R0 , 1
+MOV t21 , R0
+MOV i , t21
+JMP L9
+L11:
+CMP a , b
+JGT L12
+MOV t22 , 0
+JMP L13
+L12:
+MOV t22 , 1
+L13:
+CMP b , c
+JLT L14
+MOV t23 , 0
+JMP L15
+L14:
+MOV t23 , 1
+L15:
+CMP a , c
+JNE L16
+MOV t24 , 0
+JMP L17
+L16:
+MOV t24 , 1
+L17:
+MOV R0 , t23
+AND R0 , t24
+MOV t25 , R0
+MOV R0 , t22
+OR R0 , t25
+MOV t26 , R0
+MOV x , t26

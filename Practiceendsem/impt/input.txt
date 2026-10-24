@@ -2,13 +2,15 @@ int a,b,c,x;
 int i;
 a = 15;
 b = 5;
-c = 3;
+c = 3.67;
 x = a + b - c;
 y = a + b * c - 6;
+c = a / b;
 a = a ^ b;
 while (i < n * 2) 
 {
-    r = 12 * 4;
+    r = 12 * 4.8;
+    r = 2 + 3;
     s = a * b + c;
     t = i + s;
     if (a < b) {
@@ -22,5 +24,4 @@ for (i = 0; i < 5; i++) {
     a = a + 2;
     b = x * y * c;
 }
-
 x = a > b or b < c and a != c;

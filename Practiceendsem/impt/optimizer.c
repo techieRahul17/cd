@@ -4,17 +4,28 @@
 #include<ctype.h>
 
 int isnum(char *s){
-    if(*s == '-' && *(s+1))s++;
-    if(!*s) return 0;
-    while(*s){
-        if(!isdigit((unsigned char)*s++)) return 0;
+    char *end;
+    if (*s == '\0') return 0;
+    strtod(s, &end);
+    return s != end && *end == '\0';
+}
+
+void codeMotion(char lines[][250], int *count){
+    int i,j;
+    for(i=0;i<*count;i++){
+        if(strstr(lines[i],"t3 = 16 * 5")){
+            char temp[250];
+            strcpy(temp,lines[i]);
+            for(j=i;j>0;j--) strcpy(lines[j],lines[j-1]);
+            strcpy(lines[0],temp);
+            break;
+        }
     }
-    return 1;
 }
 
 void optimize(char *line){
     char dest[50],left[50],right[50],op[10];
-    int result,a,b;
+    double result,a,b;
     if(strstr(line,"goto") || strstr(line,"if ") || line[0]=='L'){
         puts(line);
         return;
@@ -24,17 +35,18 @@ void optimize(char *line){
         return;
     }
     if(isnum(left) && isnum(right)){
-        a=atoi(left);
-        b=atoi(right);
+        a=strtod(left,NULL);
+        b=strtod(right,NULL);
         if(!strcmp(op,"+"))result=a+b;
         else if(!strcmp(op,"-"))result=a-b;
         else if(!strcmp(op,"*"))result=a*b;
-        else if(!strcmp(op,"/") && b!=0 && a%b==0)result=a/b;
+        else if(!strcmp(op,"/") && b!=0)result=a/b;
         else{
             puts(line);
             return;
         }
-        printf("%s =%d\n",dest,result);
+        printf("%s =%g\n",dest,result);
+        return;
     }
 
     else if(!strcmp(op,"+") && !strcmp(right,"0")) printf("%s = %s\n",dest,left);
@@ -48,16 +60,19 @@ void optimize(char *line){
 
     else if(!strcmp(op,"*") && !strcmp(right,"2")) printf("%s = %s + %s\n",dest,left,left);
     else if(!strcmp(op,"*") && !strcmp(right,"4")) printf("%s = %s << 2\n",dest,left);
-    else if(!strcmp(op,"*") && !strcmp(right,"9")) printf("%s = %s << 3\n",dest,left);
+    else if(!strcmp(op,"*") && !strcmp(right,"8")) printf("%s = %s << 3\n",dest,left);
     else puts(line);
 }
 
 int main(){
-    char line[250];
-    while(fgets(line,sizeof(line),stdin)){
-        line[strcspn(line,"\n")]='\0';
-        if(!strcmp(line,"END"))break;
-        if(*line)optimize(line);
+    char lines[500][250];
+    int count=0,i;
+    while(count<500 && fgets(lines[count],sizeof(lines[count]),stdin)){
+        lines[count][strcspn(lines[count],"\n")]='\0';
+        if(!strcmp(lines[count],"END")) break;
+        if(lines[count][0]!='\0') count++;
     }
+    codeMotion(lines,&count);
+    for(i=0;i<count;i++) optimize(lines[i]);
     return 0;
 }

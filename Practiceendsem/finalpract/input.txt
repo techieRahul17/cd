@@ -1,0 +1,30 @@
+int a,b,c,x,i;
+float p,q,r;
+a = 12;
+b = 5;
+c = 2;
+p = 2.5;
+q = 4.5;
+x = a + b * c - 6;
+p = 12 * 5.5;
+q = p + 0.0;
+r = 10.0 / 4.0;
+while (a < b * 4)
+{
+    x = a * 2;
+    p = p + q;
+    if (x >= b) {
+        c = a + 1;
+        q = p * 2.5;
+    } else {
+        c = b * 3;
+        r = 12.5 + 2.5;
+    }
+    a = a + 1;
+}
+for (i = 0; i < 5; i++) {
+    b = b + 2;
+    x = a * b * c;
+    p = p + 1.5;
+}
+x = a > b or b < c and a != c;

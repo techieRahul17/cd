@@ -1,6 +1,6 @@
 MOV a , 15
 MOV b , 5
-MOV c , 3
+MOV c , 3.67
 MOV R0 , a
 ADD R0 , b
 MOV t1 , R0
@@ -19,62 +19,66 @@ SUB R0 , 6
 MOV t5 , R0
 MOV y , t5
 MOV R0 , a
-XOR R0 , b
+DIV R0 , b
 MOV t6 , R0
-MOV a , t6
+MOV c , t6
+MOV R0 , a
+XOR R0 , b
+MOV t7 , R0
+MOV a , t7
 L1:
 MOV R0 , n
 ADD R0 , n
-MOV t7 , R0
-CMP i , t7
+MOV t8 , R0
+CMP i , t8
 JLT L3
-MOV t8 , 0
+MOV t9 , 0
 JMP L4
 L3:
-MOV t8 , 1
+MOV t9 , 1
 L4:
-CMP t8 , 0
+CMP t9 , 0
 JE L2
-MOV t9 , 48
-MOV r , t9
+MOV t10 , 48
+MOV r , t10
 MOV R0 , a
 MUL R0 , b
-MOV t10 , R0
-MOV R0 , t10
-ADD R0 , c
 MOV t11 , R0
-MOV s , t11
+MOV R0 , t11
+ADD R0 , c
+MOV t12 , R0
+MOV s , t12
 MOV R0 , i
 ADD R0 , s
-MOV t12 , R0
-MOV t , t12
+MOV t13 , R0
+MOV t , t13
 CMP a , b
 JLT L5
-MOV t13 , 0
+MOV t14 , 0
 JMP L6
 L5:
-MOV t13 , 1
+MOV t14 , 1
 L6:
-CMP t13 , 0
+CMP t14 , 0
 JE L7
 MOV R0 , a
 ADD R0 , 2
-MOV t14 , R0
-MOV c , t14
+MOV t15 , R0
+MOV c , t15
 CMP a , b
 JGE L9
-MOV t15 , 0
+MOV t16 , 0
 JMP L10
 L9:
-MOV t15 , 1
+MOV t16 , 1
 L10:
-MOV r , t15
+MOV r , t16
 JMP L8
 L7:
 MOV R0 , b
 MUL R0 , 3
-MOV t16 , R0
-MOV c , t16
+MOV t17 , R0
+MOV c , t17
 L8:
 JMP L1
 L2:
@@ -86,46 +90,46 @@ JMP L13
 L12:
 MOV R0 , a
 ADD R0 , 2
-MOV t17 , R0
-MOV a , t17
+MOV t18 , R0
+MOV a , t18
 MOV R0 , x
 MUL R0 , y
-MOV t18 , R0
-MOV R0 , t18
-MUL R0 , c
 MOV t19 , R0
-MOV b , t19
+MOV R0 , t19
+MUL R0 , c
+MOV t20 , R0
+MOV b , t20
 MOV R0 , i
 ADD R0 , 1
-MOV t20 , R0
-MOV i , t20
+MOV t21 , R0
+MOV i , t21
 JMP L11
 L13:
 CMP a , b
 JGT L14
-MOV t21 , 0
+MOV t22 , 0
 JMP L15
 L14:
-MOV t21 , 1
+MOV t22 , 1
 L15:
 CMP b , c
 JLT L16
-MOV t22 , 0
+MOV t23 , 0
 JMP L17
 L16:
-MOV t22 , 1
+MOV t23 , 1
 L17:
 CMP a , c
 JNE L18
-MOV t23 , 0
+MOV t24 , 0
 JMP L19
 L18:
-MOV t23 , 1
+MOV t24 , 1
 L19:
-MOV R0 , t22
-AND R0 , t23
-MOV t24 , R0
-MOV R0 , t21
-OR R0 , t24
+MOV R0 , t23
+AND R0 , t24
 MOV t25 , R0
-MOV x , t25
+MOV R0 , t22
+OR R0 , t25
+MOV t26 , R0
+MOV x , t26
